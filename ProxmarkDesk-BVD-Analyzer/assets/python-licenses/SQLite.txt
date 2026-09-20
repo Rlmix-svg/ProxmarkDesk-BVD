@@ -1,0 +1,3 @@
+SQLite is in the public domain.
+SQLite 3.50.4 is included as a dependency of the official CPython Android package.
+Source and public-domain dedication: https://www.sqlite.org/copyright.html

@@ -1,0 +1,6 @@
+BVD Analyzer 1.2 — 2026-09-08
+PASS: Java Android API 36 compilation, D8 conversion.
+PASS: APK v3 signature, one signer; zipalign 16 KiB.
+PASS: 7 BVD checks: UID, partial pages, JSON roundtrip, page comparison, same/different traces, invalid password.
+Native client reused from ProxmarkDesk 0.7; unchanged.
+NOT TESTED: installation/new screens on physical Android, USB and RF operations.

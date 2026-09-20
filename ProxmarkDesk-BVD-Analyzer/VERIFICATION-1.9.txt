@@ -1,0 +1,26 @@
+ProxmarkDesk BVD 1.9 — verification snapshot
+Date: 2026-09-16
+
+Verified in the isolated source copy:
+- SourceRegressionTests.py: PASS
+  - 24 logical Action IDs referenced by migrated UI are registered
+  - five-area primary shell present
+  - stale capability guard present
+  - UTF-8/BOM/mojibake scan clean
+- ActionRegistryTests.java: PASS, 65 checks
+- CommandSessionManagerTests.java: PASS, 22 checks
+  - busy submit rejected without evicting active command
+  - timeout blocks next command until late marker
+  - cancel blocks next command until marker
+  - next command accepted after synchronization
+- Python Android ELF validation: PASS, 59 ARM64 libraries, dependencies and 16 KiB alignment
+- Python tools: PASS, 12 checks
+- Termux builder tests: PASS, 5 tests
+
+Not executed in this container:
+- Android SDK Java/DEX/APK build
+- installation on physical Android device
+- USB/OTG/RF field tests
+
+Required physical regression sequence:
+successful command -> bad parameters -> next command without reconnect -> no tag -> next command -> Stop -> next command -> physical USB detach.

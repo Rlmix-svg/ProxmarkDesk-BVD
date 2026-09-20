@@ -1,0 +1,92 @@
+ProxmarkDesk Android 0.7 — 2026-09-04
+PASS: Java/API36, D8, native ARM64 rebuild (util.c), v3 signature, zipalign 16KiB.
+PASS: 17 library/update checks (LibraryTests.java).
+PASS: real UpdateChecker.fetch HTTPS call returned GitHub release v4.21611.
+PASS: harness uses actual kbd_enter_pressed C function; queued command fence
+remains readable on piped stdin (Windows host guard test, Android build macro).
+NOT TESTED: on-phone new UI, real RF emulation, physical button stop.
+Native source archive includes the pipe keyboard guard and all previous changes.
+
+ProxmarkDesk Android 0.6 — 2026-09-03
+PASS: Java/API36 compile, D8, ARM64 APK, v3 signature and 16KiB zip alignment.
+PASS: 16 new UiLogic checks: command-only color ranges, no result coloring,
+protocol mappings and unsupported families, password normalization, per-UID
+deduplication, invalid input rejection, bounded history and newest-first order.
+NOT TESTED on phone: auto-connect/USB events, foreground service lifecycle,
+stop during in-flight commands, password widgets and command-field clearing.
+Native client unchanged. Earlier version checks below are historical.
+
+ProxmarkDesk Android 0.5 — 2026-09-03
+PASS: Java compilation and D8, ARM64 APK, min API 30 / target API 36.
+PASS: v3 signature and zipalign -c -P 16 4; same certificate as 0.4.
+PASS: 38 authentication/trace checks, 28 tag-information checks,
+22 analyzer checks, 13 root-launch checks, 21 connection checks (122 total).
+Trace tests use the same fixtures as Windows and include multiple independent
+UIDs and passwords, 4/7/10-byte UIDs, missing/bad PACK, invalid CRC/BCC,
+unknown UID, session reset and truncated trace records.
+NOT TESTED on physical hardware: new select/UID/PWD_AUTH sequence and UI lifecycle.
+Prior USB fixes are retained; native client is unchanged from 0.4.
+
+Historical validation follows:
+ProxmarkDesk Android 0.4 — 2026-09-03
+
+Version 0.4:
+PASS: 28 TagInfoTests checks including the user's Mikron Ultralight and EM410x
+outputs; family, UID, memory and Classic size; fields/counters/signature details;
+negative searches, help, spinner lines; bounded command sequencing;
+changed/multiple UID isolation; tag removal; transport failure; protocol routing.
+PASS: native ARM64 client rebuilt with hf mfu info --noauth to skip its default
+3DES/AES/password tests. The three automatic-check branches are guarded.
+PASS: Java/D8 build and APK signature/alignment verification.
+Real USB connection was confirmed by the user's 0.3 log (hw version succeeds).
+Automatic follow-up reading and the new native option require phone validation.
+
+
+Version 0.3:
+PASS: 13 new RootLaunchTests checks. The generated command is actually run by
+MSYS sh against a fixture executable, testing '=' in the installation path,
+spaces, apostrophes, literal shell substitutions, HOME, working directory,
+PID marker, argument order and strict tty validation.
+PASS: updated Java / D8 compilation; APK signature and alignment verification.
+Native client unchanged. User report established USB visibility and uid=0;
+console showed env trying to exec --incognito before Iceman could start.
+The env invocation has been removed. Real Android root launch and subsequent
+USB exchange still require verification on the phone.
+
+Version 0.2:
+PASS: 21 new tests in tests/ConnectionTests.java: input validation including UTF8
+byte boundaries; empty/failed root response; UID verification; port selection;
+missing /dev nodes; sysfs USB visibility; inaccessible directories; truncated
+responses; real child-process output larger than a pipe buffer; timeout cleanup.
+PASS: updated Java compilation / D8 / APK signature and alignment.
+Native client and analyzer code unchanged from 0.1.
+User screenshots confirm 0.1 installation, offline Android/aarch64 native startup,
+and a root-manager permission notification. They do not establish working USB.
+Version 0.2 Android runtime and OTG connection still require testing on the phone.
+
+Original 0.1 build checks:
+
+PASS: Iceman v4.21611 cross-compiled with Android NDK r28c / Clang 19.0.1.
+PASS: native AArch64 PIE, /system/bin/linker64, LOAD alignment 0x4000 (16 KiB).
+PASS: native dynamic dependencies limited to Android libc.so, libm.so, libdl.so, libz.so.
+PASS: Java interface compiled with JDK 17 against Android API 36.
+PASS: D8 DEX conversion, min API 30.
+PASS: APK target API 36, ARM64 ABI, native executable included.
+PASS: APK signature verified with apksigner (v3), one signer.
+PASS: APK zip alignment verified with zipalign -c -P 16 4.
+PASS: 22 host JVM analyzer checks (tests/AnalyzerTests.java).
+  HEX validation; whitespace; SHA-256 vector; user's UID and BCC;
+  partial 136-byte memory; non-NDEF OTP; bad BCC;
+  NDEF Text/URI; truncated and oversized NDEF;
+  valid/invalid Classic ACL; comparisons with different lengths;
+  EML comments; JSON numeric ordering, sparse blocks, width mismatch;
+  bounded HEX preview.
+
+NOT TESTED locally: Android foreground service lifecycle, root manager interaction,
+USB connection, reading real tags, sniff capture. These require testing on the phone.
+Desktop USB success from earlier sessions does not validate Android USB behavior.
+
+The APK is signed using a local development key. It is a first test build.
+Native source and licenses are included with the delivery. Termux/Python are
+not runtime dependencies on the phone. Some upstream scripts depend on external
+desktop utilities and are not guaranteed to run in this Android environment.

@@ -1,0 +1,27 @@
+ProxmarkDesk BVD 1.5 / Android ARM64
+
+PASS: Android Java compilation and DEX packaging.
+PASS: APK signature v3 and zipalign -P 16.
+PASS: package org.proxmarkdesk.android, versionCode 15, minSdk 30, targetSdk 36.
+PASS: signer SHA-256 matches release 1.4:
+58ac7bb49a08de0f53556f2580513ae8d05e15845d3c8dbe0012ce26225f86a5
+
+PASS: 11 Python runner/bridge host checks:
+quoted Unicode arguments, empty argument, literal backslashes, invalid quotes,
+multiline rejection, UTF-8 stdout/stderr, exit status, timeout with partial
+output, process cancellation, rejected unauthenticated requests, command/input/error exchange.
+
+PASS: 12 Python utility checks on host, including MFD/EML round-trip,
+standard-module selftest, argument processing, dump inventory and JSON report.
+
+PASS: static ELF analysis of 59 Python libraries: AArch64, load alignment >=16 KiB,
+all shared-library dependencies resolved against APK files or Android system libraries.
+PASS: bootstrap, standard-library resources and Python license present in runtime ZIP.
+
+Regression checks passed: 927 feature checks (including Russian catalog entries),
+17 library/update checks, 28 tag/auto-inspection checks, 16 UI-logic checks,
+AutoSniff sequence/duration/cancellation checks, 7 BVD checks.
+
+No physical Android phone or Proxmark3 was used for this release validation.
+The ARM64 interpreter and Android UI/lifecycle/input dialogs still require on-device testing.
+Host Python tests do not demonstrate that every Android third-party script is compatible.

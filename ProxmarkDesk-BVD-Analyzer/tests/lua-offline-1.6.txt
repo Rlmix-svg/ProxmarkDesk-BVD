@@ -1,0 +1,64 @@
+[=] No preferences file will be loaded
+
+[+] execute command from commandline: hw version; script run C:/Users/irz/Documents/Codex/2026-09-03/pr-2/work/lua16-offline/.proxmark3/luascripts/pmdesk_envcheck.lua
+
+
+
+[=] OFFLINE mode. Check "proxmark3.exe -h" if it's not what you want.
+
+
+
+[=] No history will be recorded
+
+[offline|script] pm3 --> hw version
+
+
+
+ [ Proxmark3 ]
+
+
+
+ [ Client ]
+
+  Iceman/master/v4.21611-suspect 2026-04-14 10:19:30 389522379
+
+  Compiler.................. MinGW-w64 15.2.0
+
+  Platform.................. Windows (64b) / x86_64
+
+  Readline support.......... present
+
+  QT GUI support............ present
+
+  Native BT support......... absent
+
+  Python script support..... present ( 3.14.3 )
+
+  Python SWIG support....... present
+
+  Lua script support........ present ( 5.4.8 )
+
+  Lua SWIG support.......... present
+
+
+
+[offline|script] pm3 --> script run C:/Users/irz/Documents/Codex/2026-09-03/pr-2/work/lua16-offline/.proxmark3/luascripts/pmdesk_envcheck.lua
+
+[+] executing lua C:/Users/irz/Documents/Codex/2026-09-03/pr-2/work/lua16-offline/.proxmark3/luascripts/pmdesk_envcheck.lua
+
+[+] args ''
+
+Loaded modules: 22	
+
+Missing modules: 0	
+
+Syntax errors: 0	
+
+Lua environment OK	
+
+
+
+[+] finished C:/Users/irz/Documents/Codex/2026-09-03/pr-2/work/lua16-offline/.proxmark3/luascripts/pmdesk_envcheck.lua
+
+
+

@@ -1,0 +1,23 @@
+PASS HEX whitespace
+PASS odd HEX rejected
+PASS non-HEX rejected
+PASS user UID preserved
+PASS user BCC verified
+PASS partial memory size preserved
+PASS non-NDEF OTP identified
+PASS bad BCC detected
+PASS SHA256 empty vector
+PASS NDEF Text
+PASS NDEF URI
+PASS truncated NDEF
+PASS NDEF 32-bit length bounds
+PASS Classic default ACL
+PASS Classic invalid ACL
+PASS comparison includes unequal lengths
+PASS identical comparison
+PASS EML with comments
+PASS JSON numeric block order
+PASS JSON sparse dump rejected
+PASS JSON unequal block widths rejected
+PASS HEX preview bounded
+TOTAL 22 checks passed

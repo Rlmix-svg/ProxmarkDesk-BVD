@@ -1,0 +1,17 @@
+ProxmarkDesk Android 1.6 — local validation, 2026-09-10
+Java/DEX build: PASS
+APK signature v3 and 16 KiB zip alignment: PASS
+BVD: 7 checks PASS
+Python bridge/runner: 11 checks PASS
+Python tools: 12 checks PASS
+Feature/catalogue: 927 checks PASS
+Library/update: 17 checks PASS
+Tag information: 28 checks PASS
+UI logic: 16 checks PASS
+AutoSniff sequence/timer/delay/cancellation: PASS
+Resource installation and action selection: 1102 checks PASS
+Catalogue: 1005 actions (native commands + Lua + packaged Python).
+Lua probe: real Windows Iceman v4.21611 offline, packaged resource paths only.
+Loaded modules: 22; Missing modules: 0; Syntax errors: 0; Lua environment OK.
+No Lua script top-level actions or physical tag operations executed by this probe.
+Android ARM64 client is unchanged; physical Android/OTG/root/tag/UI validation NOT performed.
