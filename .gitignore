@@ -1,0 +1,25 @@
+# Local build output
+.termux-build/
+out/
+build/
+*.apk
+*.aab
+*.dex
+*.class
+
+# Signing material
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local reports / scratch
+.agent/
+*.log
